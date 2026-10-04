@@ -37,7 +37,11 @@ def ticket_changes_sql(upto: str | None = None, batch: str | None = None) -> str
     return f"""
     SELECT * FROM (
         SELECT
-            j->'value'->'after'->>'ticket_id'                       AS ticket_id,
+            -- On a delete Debezium sends op='d' with after = null: the key is only
+            -- in `before`, so fall back to it — otherwise the delete is dropped and
+            -- the ticket never gets tombstoned (and can even be resurrected).
+            coalesce(j->'value'->'after'->>'ticket_id',
+                     j->'value'->'before'->>'ticket_id')            AS ticket_id,
             _op,
             (j->'value'->'source'->>'lsn')::BIGINT                  AS _lsn,
             make_timestamp((j->'value'->'source'->>'ts_ms')::BIGINT * 1000) AS _changed_at,

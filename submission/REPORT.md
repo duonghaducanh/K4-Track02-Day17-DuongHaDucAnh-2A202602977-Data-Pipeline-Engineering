@@ -3,9 +3,9 @@
 Phần phân tích tối đa một trang, không tính output ở phần 5.
 Định dạng tham chiếu và phạm vi tính trang: [SUBMISSION.md](../docs/SUBMISSION.md).
 
-**Họ tên / MSSV:** Dương Hà Đức Anh — _(MSSV: điền)_
-**Repo:** _(điền URL repo bài nộp `K4-Track02-Day17-HoVaTen-MSSV-DataPipelineEngineering`)_
-**Commit bài nộp:** `0c2d61a`
+**Họ tên / MSSV:** Dương Hà Đức Anh — MSSV: 2A202602977
+**Repo:** https://github.com/duonghaducanh/K4-Track02-Day17-Data-Pipeline-Engineering
+**Commit bài nộp:** `dcbc1d0`
 **AI đã dùng và phạm vi hỗ trợ (hoặc không dùng):** Claude Code — đọc code, chỉ ra 3 lỗi và đề
 xuất cách sửa; tôi tự chạy verify/pytest/rerun/dbt trên máy và kiểm chứng từng thay đổi.
 **Nguồn tham khảo khác (nếu có):** slide Day 17, tài liệu DuckDB `MERGE INTO` / `microbatch`.
